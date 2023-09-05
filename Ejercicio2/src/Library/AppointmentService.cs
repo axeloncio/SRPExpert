@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Text;
 
-namespace Library
+namespace Mal
 {
     public class AppointmentService
     {
+/* Cuidado, en general la clase "AppointmentService" se traga toda la funcionalidad del programa.
+No cumple con SRP, pues la clase AppointmentService se encarga de ambas cosas,
+crear la cita como tal (con el método CreateAppointment) y se encarga de validar la información ingresada.
+todo en un mismo método, lo cual es peor.
+*/
         public static string CreateAppointment(string name, string id, string phoneNumber, DateTime date, string appoinmentPlace, string doctorName)
         {
             StringBuilder stringBuilder = new StringBuilder("Scheduling appointment...\n");
